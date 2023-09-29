@@ -79,6 +79,14 @@ test:
 # Read https://guides.rubyonrails.org/configuring.html#configuring-a-database
 # for a full overview on how database connection configuration can be specified.
 #
+
+staging:
+  <<: *default
+  database: test_render_staging
+  user: test_render_staging
+  password: notagoodpassword
+
+
 production:
   <<: *default
   database: test_render_production

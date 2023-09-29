@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: staging-test-render-web
+    runtime: ruby
+    buildCommand: bundle install
+    startCommand: bin/rails s
+    preDeployCommand: bin/rails db:migrate
+
+databases:
+  - name: staging-test-render-postgres
+    databaseName: test_render_staging
+    user: test_render
