@@ -4,8 +4,11 @@ services:
     plan: free
     runtime: ruby
     buildCommand: bundle install
-    startCommand: bin/rails s -e staging
+    startCommand: bin/rails s
     preDeployCommand: bin/rails db:migrate
+    envVars:
+      - key: RAILS_ENV
+        value: staging
 
 databases:
   - name: staging-test-render-postgres
